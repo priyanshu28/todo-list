@@ -1,0 +1,219 @@
+.add-task-btn {
+    display: block;
+    margin: 20px auto;
+    font-size: 36px;
+    color: #999999;
+    font-weight: 700;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    display: none;
+    // margin: 10px auto;
+    width: 100%;
+    max-width: 700px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 35px 65px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h2 {
+        font-size: 24px;
+        color: #999999;
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 35px;
+    }
+
+    .close-modal {
+        position: absolute;
+        font-size: 30px;
+        right: 30px;
+        top: 15px;
+        font-weight: 700;
+        color: #43b05c;
+        transform: rotate(45deg);
+        cursor: pointer;
+    }
+
+    label {
+        color: $green-color;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    input {
+        border-width: 0px;
+        border-bottom: 1px solid #979797;
+        padding: 5px 0px;
+        width: 100%;
+        margin-bottom: 20px;
+
+        &[type='radio'] {
+            width: auto;
+        }
+    }
+
+    .btn {
+        background-color: $green-color;
+        border-color: $green-color;
+    }
+}
+
+.todo-list-wrapper {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 35px 65px 70px;
+
+    select.form-control {
+        border-width: 0px;
+        border-bottom: 1px solid #dddddd;
+        padding: 10px 0px;
+        min-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .search-textbox {
+        float: right;
+        border: 1px solid #dddddd;
+        border-radius: 50px;
+        padding: 10px 15px;
+    }
+
+    h1 {
+        color: $green-color;
+        font-size: 36px;
+        font-weight: 300;
+    }
+
+    .todo-list {
+        list-style: none;
+
+        li {
+            position: relative;
+            padding: 15px 15px 15px 90px;
+            border-bottom: 1px solid #dddddd;
+
+            &:hover {
+                .task-delete-action {
+                    display: inline-block;
+                }
+            }
+
+            &.done {
+                text-decoration: line-through;
+
+                .task-initial {
+                    background-color: $green-color;
+
+                    span {
+                        display: none;
+                        opacity: 0;
+                    }
+
+                    &:after {
+                        display: block;
+                        width: 30px;
+                        height: 15px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        .task-initial {
+            position: absolute;
+            width: 59px;
+            height: 59px;
+            left: 0px;
+            font-size: 36px;
+            text-transform: uppercase;
+            border: 1px solid #bbbbbb;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 59px;
+            background-color: transparent;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            span {
+                pointer-events: none;
+                opacity: 1;
+            }
+
+            &:after {
+                display: none;
+                content: '';
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                left: 12px;
+                top: 15px;
+                border-left: 3px solid #fff;
+                border-bottom: 3px solid #fff;
+                transform: rotate(0deg);
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        .task-name {
+            font-size: 20px;
+            color: #616161;
+            font-weight: 300;
+        }
+
+        .task-desc {
+            color: #616161;
+            font-weight: 300;
+        }
+
+        .task-delete-action {
+            display: none;
+            position: absolute;
+            font-size: 20px;
+            right: 0px;
+            font-weight: 700;
+            top: 50%;
+            margin-top: -15px;
+            color: #43b05c;
+            transform: rotate(45deg);
+        }
+    }
+
+    .task-filter-list {
+        float: right;
+
+        li {
+            input[type="radio"] {
+                display: none;
+
+                &:checked+label {
+                    border-color: $green-color;
+                }
+            }
+
+            label,
+            &:last-child {
+                color: #999999;
+                font-size: 20px;
+                font-weight: 300;
+                margin: 10px 10px;
+                padding: 5px 15px;
+                border: 1px solid transparent;
+                border-radius: 30px;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    border-color: $green-color;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

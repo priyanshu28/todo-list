@@ -1,0 +1,71 @@
+// Variables
+$green-color: #43b05c;
+
+
+// Common styles
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+	position: relative;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: $green-color;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+input {
+	max-width: 100%;
+	display: block;
+	&[type='radio'],
+	&[type='checkbox'] {
+		display: inline-block;
+	}
+}
+
+.list-unstyled {
+	list-style: none;
+}
+
+.list-inline {
+	list-style: none;
+	li {
+		display: inline-block;
+	}
+}
+
+.btn {
+	color: #ffffff;
+	padding: 10px 15px;
+	background-color: rgba(0,0,0,0);
+	border: 1px solid #ffffff;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.wrapper {
+	max-width: 1300px;
+	margin: 0px auto;
+	height: 100%;
+}

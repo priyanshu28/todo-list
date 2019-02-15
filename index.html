@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="styles/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Add task Button -->
+        <button class="btn add-task-btn" onclick="openModal()">Your TO-DO List <span>+</span></button>
+        
+        <!-- Add task details Modal -->
+        <div id="add-task-modal" class="modal">
+            <h2>Add a new Task</h2>
+            <span class="close-modal" onclick="closeModal()">+</span>
+            <form name="add-task-form">
+                <label>Add Task</label>
+                <input id="task-title" type="text" name="task_name" placeholder="What needs to be done?" required>
+                <label>Description</label>
+                <input id="task-desc" type="text" name="task_desc" placeholder="Describe your task" required>
+                <ul class="list-inline">
+                    <li>
+                        <label>Date</label>
+                        <input id="task-date" type="date" name="task_date" placeholder="dd/mm/yyyy" required>
+                    </li>
+                    <li>
+                        <label>Time</label>
+                        <input id="task-time" type="time" name="task_time" placeholder="hr:min" required>
+                    </li>
+                </ul>
+                <ul class="list-inline">
+                    <li>
+                        <input id="personal" type="radio" name="task_type" value="Personal" required> <label for="personal">Personal</label>
+                        <input id="business" type="radio" name="task_type" value="Business" required> <label for="business">Business</label>
+                        <input id="others" type="radio" name="task_type" value="Others" required> <label for="others">Others</label>
+                    </li>
+                    <li><button id="saveTaskBtn" class="btn">Save</button></li>
+                </ul>
+            </form>
+        </div>
+
+        <!-- To Do List -->
+        <div class="todo-list-wrapper">
+            <select id="category-dropdown" name="category_dropdown" class="form-control" onchange="commonFilter(this)">
+                <option value="Personal">Personal</option>
+                <option value="Business">Business</option>
+                <option value="Others">Others</option>
+            </select>
+            <input class="search-textbox" name="seach-box" type="text" placeholder="Search by task name" onkeyup="commonFilter(this)">
+            <h1>Tasks</h1>
+            <ul class="todo-list">
+            </ul>
+            <span id="item-left">0 item left</span>
+            <ul class="list-inline task-filter-list">
+                <li>
+                    <input id="all" type="radio" name="footer_filter" value="All" required onclick="commonFilter(this)"> <label for="all">All</label>
+                    <input id="completed" type="radio" name="footer_filter" value="Completed" required onclick="commonFilter(this)"> <label for="completed">Completed</label>
+                    <input id="active" type="radio" name="footer_filter" value="Active" required onclick="commonFilter(this)"> <label for="active">Active</label>
+                </li>
+                <li>Clear Completed</li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+
+</html>
